@@ -33,21 +33,22 @@ const customPDF = (wrapperId, pdfSourcePath, workJsPath) => {
 
                 console.log('Page ' + pageNumber + ' loaded');
 
-                var scale = 1.5;
-                var viewport = page.getViewport({ scale: scale });
+                let scale = 1.5;
+                let viewport = page.getViewport({ scale: scale });
 
                 // Prepare canvas using PDF page dimensions
-                var canvas = document.getElementById('the-canvas');
+                let canvas = document.createElement('canvas');
+                wrapper.appendChild(canvas);
                 var context = canvas.getContext('2d');
                 canvas.height = viewport.height;
                 canvas.width = viewport.width;
 
                 // Render PDF page into canvas context
-                var renderContext = {
+                let renderContext = {
                     canvasContext: context,
                     viewport: viewport
                 };
-                var renderTask = page.render(renderContext);
+                let renderTask = page.render(renderContext);
                 renderTask.promise.then(function () {
                     console.log('Page rendered');
                 });
