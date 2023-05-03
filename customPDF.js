@@ -4,14 +4,14 @@
 const customPDF = (wrapperId, pdfSourcePath, workJsPath) => {
 
     if (!wrapperId || !pdfSourcePath) {
-        console.log('wrapperId 혹은 pdfSourcePath 가 입력되지 않음');
+        console.log('wrapperId or pdfSourcePath missing');
         return;
     }
 
     const wrapper = document.getElementById(wrapperId);
 
     if (!wrapper) {
-        console.log('입력된 wrapperId로 엘레멘트 찾을 수 없음');
+        console.log('can\'t find element with wrapperId');
         return;
     }
 
