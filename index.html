@@ -1,0 +1,15 @@
+<html>
+<head>
+  <script src="./pdf.js"></script>
+  <script src="./customPDF.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log('dom ready');
+      customPDF('canvas_wrapper', './sample.pdf', './pdf.worker.js');
+    });
+  </script>
+</head>
+<body>
+  <div id="canvas_wrapper"></div>
+</body>
+</html>
